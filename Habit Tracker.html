@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Habit Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div><h1>Habit Tracker</h1><p id="dateLine"></p></div>
+  <div class="today"><div class="ring" id="ring"><span id="ringText">0/0</span></div><div><strong id="todayLabel">Today</strong><br><small id="todaySub" style="color:var(--muted)"></small></div></div>
+</header>
+<main>
+  <section aria-labelledby="formTitle">
+    <h2 id="formTitle">Add a habit</h2>
+    <form id="habitForm" novalidate>
+      <label for="name">Habit name<input id="name" type="text" maxlength="40" placeholder="e.g. Read 20 pages" autocomplete="off"></label>
+      <label for="category">Category
+        <select id="category"><option>Health</option><option>Learning</option><option>Work</option><option>Mindfulness</option><option>Other</option></select>
+      </label>
+      <label for="goal">Weekly goal
+        <select id="goal"><option value="7">Every day</option><option value="5">5 days a week</option><option value="3">3 days a week</option><option value="1">Once a week</option></select>
+      </label>
+      <p class="error" id="error" role="alert"></p>
+      <div class="btns"><button type="submit" class="primary" id="submitBtn">Add habit</button><button type="button" class="ghost" id="cancelBtn" hidden>Cancel</button></div>
+    </form>
+  </section>
+  <section aria-labelledby="listTitle">
+    <h2 id="listTitle">Your habits</h2>
+    <div class="tools">
+      <label for="search">Search<input id="search" type="search" placeholder="Find a habit"></label>
+      <label for="fStatus">Status<select id="fStatus"><option value="all">All</option><option value="pending">Not done today</option><option value="done">Done today</option></select></label>
+      <label for="fCat">Category<select id="fCat"><option value="all">All</option><option>Health</option><option>Learning</option><option>Work</option><option>Mindfulness</option><option>Other</option></select></label>
+    </div>
+    <ul id="list"></ul>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
